@@ -59,19 +59,24 @@ public class Demonstration {
         planetList.sort((x, y) -> Double.compare(x.koeff, y.koeff));
         System.out.println("После сортировки");
         planetList.stream().forEach(x -> System.out.println(x));
+
+        planetList.sort(new StarLord());
+        System.out.println("После сортировки");
+        planetList.stream().forEach(x -> System.out.println(x));
     }
 
-    public class AstronomRadgesh implements Comparator<Planet> {
-        @Override
-        public  int compare(Planet p1, Planet p2){
-            return Double.compare(p1.koeff,p2.koeff);
-        }
-    }
 
-    public class StarLord implements Comparator<Planet> {
-        @Override
-        public int compare(Planet p1, Planet p2){
-            return Double.
-        }
+}
+class AstronomRadgesh implements Comparator<Planet> {
+    @Override
+    public  int compare(Planet p1, Planet p2){
+        return Double.compare(p1.koeff,p2.koeff);
+    }
+}
+
+class StarLord implements Comparator<Planet> {
+    @Override
+    public int compare(Planet p1, Planet p2){
+        return p1.name.compareTo(p2.name);
     }
 }
