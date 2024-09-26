@@ -63,6 +63,14 @@ public class Demonstration {
         planetList.sort(new StarLord());
         System.out.println("После сортировки");
         planetList.stream().forEach(x -> System.out.println(x));
+
+        // добавляю спутники планетам
+        Planet earth = planetList.get(2);
+        earth.addMoon(new Moon("Луна", (1/81), "серый"));
+
+        Planet mars = planetList.get(3);
+        mars.addMoon(new Moon("Фобос", 1.072e16, ""));
+
     }
 
 
